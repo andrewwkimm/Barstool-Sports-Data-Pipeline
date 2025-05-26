@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_sample_data
+    description: "Staging model for JSONL user events data"
+    columns:
+      - name: content_barstoolContentID
+        description: "Foreign key to content"
+
+  - name: stg_prod_content
+    description: "Staging model for content metadata"
+    columns:
+      - name: SHARE_URL
+        description: "Unique content ID"
+
+  - name: stg_brands_talent
+    description: "Staging model for talent/brand data"
+    columns:
+      - name: _ID
+        description: "Talent or brand ID"

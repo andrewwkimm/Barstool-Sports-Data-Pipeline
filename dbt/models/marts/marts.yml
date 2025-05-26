@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: user_engagement_summary
+    description: "Aggregated user engagement across content, talent, and location"
+    columns:
+      - name: content_id
+        description: "Unique ID of the content"
+      - name: views
+        description: "Total number of recorded events"
