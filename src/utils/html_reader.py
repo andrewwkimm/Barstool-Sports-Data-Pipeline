@@ -1,12 +1,13 @@
-"""The HTML Reader."""
+"""The HTML File Reader."""
 
-from typing import BinaryIO, List
+from pathlib import Path
+from typing import BinaryIO, List, Union
 
 from lxml import html
 import pyarrow as pa
 
 
-def read_html(html_file: BinaryIO) -> pa.Table:
+def read_html_file(html_file: Union[BinaryIO, Path, str]) -> pa.Table:
     """Reads an HTML object and converts it to a PyArrow table."""
     tree = html.parse(html_file)
     rows = parse_html_file(tree)
