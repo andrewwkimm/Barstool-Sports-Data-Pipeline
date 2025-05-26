@@ -10,7 +10,7 @@ WITH events AS (
         city,
         timestamp,
         event,
-        content_duration::FLOAT64 AS duration_seconds
+        CAST(content_duration AS FLOAT64) AS duration_seconds
     FROM {{ ref('stg_sample_data') }}
     WHERE event IS NOT NULL
 ),

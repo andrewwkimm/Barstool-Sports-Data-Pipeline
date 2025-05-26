@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: barstool_sports_data
+    schema: barstool_sports_data
+    tables:
+      - name: brands_talent_franchise
+        description: "Raw HTML file converted to table containing brands, talent, and franchise info"
+
+      - name: prod_contents
+        description: "CSV data about content produced"
+
+      - name: sample_data
+        description: "Raw JSONL events and content metadata from Barstool app"

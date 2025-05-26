@@ -8,4 +8,4 @@ SELECT
     TALENT,
     FRANCHISE,
     PUBLISHED_AT
-FROM {{ source('barstool_sports_data', 'PROD_CONTENTS') }}
+FROM {{ source('barstool_sports_data', 'prod_contents') }}
