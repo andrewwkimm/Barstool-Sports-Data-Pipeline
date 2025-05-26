@@ -10,6 +10,7 @@ WITH events AS (
         city,
         timestamp,
         event,
+        app_os,
         CAST(content_duration AS FLOAT64) AS duration_seconds
     FROM {{ ref('stg_sample_data') }}
     WHERE event IS NOT NULL
@@ -42,6 +43,7 @@ SELECT
     t.talent_type,
     e.country_name,
     e.city,
+    e.app_os,
     COUNT(*) AS views,
     AVG(e.duration_seconds) AS avg_duration_seconds,
     MIN(e.timestamp) AS first_seen,
@@ -49,4 +51,4 @@ SELECT
 FROM events e
 LEFT JOIN content c ON e.content_id = c.content_id
 LEFT JOIN talent t ON e.talent_id = t.talent_id
-GROUP BY 1, 2, 3, 4, 5, 6, 7, 8
+GROUP BY 1, 2, 3, 4, 5, 6, 7, 8, 9
