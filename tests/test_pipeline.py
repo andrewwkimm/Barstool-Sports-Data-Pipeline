@@ -1,6 +1,6 @@
-"""Tests for modele."""
+"""Tests for pipeline version."""
 
-from modele import __version__
+from src import __version__
 
 
 def test_version() -> None:
