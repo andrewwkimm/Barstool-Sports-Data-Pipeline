@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "barstool-sports-data-pipeline"
 version = "0.1.0"
-description = "modele"
+description = "Barstool Sports data exercise."
 authors = ["Kim, Andrew <andrewkimka@gmail.com>"]
 readme = "README.md"
 
@@ -31,7 +31,7 @@ mypy = ">=0.981"
 
 [tool.coverage.run]
 branch = true
-source = ["modele"]
+source = ["barstool-sports-data-pipeline"]
 
 [tool.coverage.report]
 show_missing = true
@@ -41,10 +41,10 @@ fail_under = 50
 testpaths=["tests"]
 
 [tool.pyright]
-include = ["modele"]
+include = ["barstool-sports-data-pipeline"]
 
 [tool.mypy]
-files = ["modele", "tests"]
+files = ["barstool-sports-data-pipeline", "tests"]
 cache_dir = "${HOME}/.mypy_cache"
 ignore_errors = false
 disallow_untyped_defs = true

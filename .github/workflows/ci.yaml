@@ -1,5 +1,5 @@
 
-name: modele CI
+name: Barstool Sports CI
 
 on: [push, pull_request]
 

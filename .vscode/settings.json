@@ -1,6 +1,6 @@
 {
     "cucumber.features": [
-        "test_acceptance/modele/features/*.feature"
+        "test_acceptance/barstool-sports-data-pipeline/features/*.feature"
     ],
     "cucumber.glue": [
         "features/**/*.py"
