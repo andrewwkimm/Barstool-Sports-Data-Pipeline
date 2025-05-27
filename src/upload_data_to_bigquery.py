@@ -29,9 +29,9 @@ def upload_data_to_bigquery(
     full_table_id = f"{project_id}.{dataset}.{table_id}"
 
     write_disposition = {
-        "append": WriteDisposition.WRITE_APPEND,
+        # "append": WriteDisposition.WRITE_APPEND,
         "replace": WriteDisposition.WRITE_TRUNCATE,
-        "fail": WriteDisposition.WRITE_EMPTY,
+        # "fail": WriteDisposition.WRITE_EMPTY,
     }[if_exists]
 
     job_config = LoadJobConfig(
