@@ -28,7 +28,7 @@ project_id = os.getenv("project_id") or "barstool-sports-461005"
 def process_and_upload_csv():
     csv_file = read_gcs_file(bucket_name, "BARSTOOL_PROD_CONTENT_PROD_CONTENTS_3.csv")
     csv_data = csv.read_csv(csv_file)
-    upload_data_to_bigquery(csv_data, dataset, project_id, "PROD_CONTENTS")
+    upload_data_to_bigquery(csv_data, dataset, project_id, "prod_contents")
 
 
 @task
@@ -48,16 +48,20 @@ def process_and_upload_jsonl():
 @flow
 def trigger_dbt_flow():
     result = DbtCoreOperation(
-        commands=["pwd", "dbt debug", "dbt run"],
-        project_dir=Path("../dbt"),
-        profiles_dir=Path("../dbt/profiles.yml"),
+        commands=["dbt run"],
+        project_dir=Path("dbt"),
+        profiles_dir=Path("dbt"),
     ).run()
     return result
 
 
-@flow(name="daily_gcs_to_bq_pipeline")
+@flow(name="Barstool-Sports-Data-Pipeline")
 def main():
     process_and_upload_csv()
     process_and_upload_html()
     process_and_upload_jsonl()
     trigger_dbt_flow()
+
+
+if __name__ == "__main__":
+    main()
