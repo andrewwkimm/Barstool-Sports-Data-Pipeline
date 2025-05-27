@@ -1,5 +1,7 @@
 """The Google Cloud Storage File Reader."""
 
+# type: ignore
+
 import io
 import os
 from typing import BinaryIO
