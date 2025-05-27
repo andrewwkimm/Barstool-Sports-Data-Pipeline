@@ -7,7 +7,7 @@ from google.cloud import bigquery
 from google.cloud.bigquery import LoadJobConfig, SourceFormat, WriteDisposition
 import pyarrow as pa
 
-from utils import table_to_parquet_buffer
+from .utils import table_to_parquet_buffer
 
 
 def upload_data_to_bigquery(
@@ -29,9 +29,9 @@ def upload_data_to_bigquery(
     full_table_id = f"{project_id}.{dataset}.{table_id}"
 
     write_disposition = {
-        # "append": WriteDisposition.WRITE_APPEND,
+        "append": WriteDisposition.WRITE_APPEND,
         "replace": WriteDisposition.WRITE_TRUNCATE,
-        # "fail": WriteDisposition.WRITE_EMPTY,
+        "fail": WriteDisposition.WRITE_EMPTY,
     }[if_exists]
 
     job_config = LoadJobConfig(
