@@ -28,11 +28,16 @@ type_check:
 
 ################################################################################
 
+streamlit:
+	streamlit run streamlit/app.py
+
+################################################################################
 .PHONY: \
 	build \
 	help \
 	lint \
 	reformat \
 	setup \
+	streamlit \
 	test \
 	type_check
