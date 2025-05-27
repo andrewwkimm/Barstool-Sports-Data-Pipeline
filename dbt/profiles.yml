@@ -4,7 +4,7 @@ barstool_sports_data_pipeline:
       dataset: barstool_sports_data
       job_execution_timeout_seconds: 300
       job_retries: 1
-      keyfile: ../gcp_service_account_key.json
+      keyfile: gcp_service_account_key.json
       location: US
       method: service-account
       priority: interactive
